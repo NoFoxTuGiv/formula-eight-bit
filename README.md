@@ -2,6 +2,8 @@
 
 Game 4 in the 20-games challenge.
 
+![F1 Sprite](/assets/F1-Base.png)
+
 ## Design Goals
 
 - Top down F1 game. Cars can only turn when moving forwards or backwards. The car should accelerate and decelerate smoothly.
