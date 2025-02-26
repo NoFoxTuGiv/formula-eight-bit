@@ -1,0 +1,42 @@
+# Godot-specific folders and files
+.import/            # Imported resources
+export.cfg          # Export settings file
+export_presets.cfg  # Export presets file
+.godot/             # Godot metadata folder
+.godot/*
+/android/
+
+# User-specific files
+*.godot             # Editor-specific binary settings file
+.editor_settings-3.*  # Editor settings (specific to the user)
+.editor_settings-4.*  # Editor settings (Godot 4.x)
+.editor_layout.cfg  # Editor layout (user-specific)
+
+# Build artifacts
+bin/                # Compiled output folder (if you use custom builds)
+
+# Logs and caches
+*.log               # Log files
+*.tmp               # Temporary files
+
+# Operating system files
+.DS_Store           # macOS system file
+Thumbs.db           # Windows system file
+desktop.ini         # Windows system file
+
+# Backup files
+*~                  # Backup files from text editors
+*.bak               # Backup files from editors
+*.old               # Old versions of files
+
+# Executables (Upload manually @ Release)
+*.exe               # Executables
+.exe
+
+# Development artifacts
+/gimp/
+/blender/
+/aseprite/
+/music-wip/
+
+# Manual additions because .gitignore loves to ignore my shit or not ignore it... Grammar.

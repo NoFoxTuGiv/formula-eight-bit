@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dxvuwylqkr5go"]
+
+[ext_resource type="FontFile" uid="uid://bn2bdpqk33frc" path="res://assets/PressStart2P-Regular.ttf" id="1_ols5k"]
+
+[resource]
+default_font = ExtResource("1_ols5k")
+TabContainer/constants/side_margin = 20
+VBoxContainer/constants/separation = 15

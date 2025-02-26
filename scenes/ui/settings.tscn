@@ -1,0 +1,185 @@
+[gd_scene load_steps=5 format=3 uid="uid://br87u41bsw5i1"]
+
+[ext_resource type="Script" uid="uid://bqlmof15ohpvx" path="res://scripts/ui/resolution.gd" id="1_7pacj"]
+[ext_resource type="Theme" uid="uid://dxvuwylqkr5go" path="res://resources/main_theme.tres" id="2_h175o"]
+[ext_resource type="Script" uid="uid://c65j0xvj5om78" path="res://scripts/ui/audio.gd" id="2_ptynm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mr5aa"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = ExtResource("2_h175o")
+theme_override_font_sizes/font_size = 25
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.95, 0.95)
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_h175o")
+current_tab = 1
+
+[node name="Audio" type="VBoxContainer" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_h175o")
+alignment = 1
+script = ExtResource("2_ptynm")
+metadata/_tab_index = 0
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/TabContainer/Audio"]
+layout_mode = 2
+theme = ExtResource("2_h175o")
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_mr5aa")
+
+[node name="Volume" type="Label" parent="MarginContainer/TabContainer/Audio"]
+layout_mode = 2
+text = "Volume: 100%"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Audio"]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+
+[node name="VolSlider" type="HSlider" parent="MarginContainer/TabContainer/Audio/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+tick_count = 10
+
+[node name="Mute" type="CheckBox" parent="MarginContainer/TabContainer/Audio"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Mute"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/TabContainer/Audio"]
+layout_mode = 2
+theme = ExtResource("2_h175o")
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_mr5aa")
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/TabContainer/Audio"]
+layout_mode = 2
+theme = ExtResource("2_h175o")
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_mr5aa")
+
+[node name="Back" type="Button" parent="MarginContainer/TabContainer/Audio"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Back"
+
+[node name="Resolution" type="VBoxContainer" parent="MarginContainer/TabContainer"]
+layout_mode = 2
+theme = ExtResource("2_h175o")
+alignment = 1
+script = ExtResource("1_7pacj")
+metadata/_tab_index = 1
+
+[node name="Label" type="Label" parent="MarginContainer/TabContainer/Resolution"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("2_h175o")
+text = "Resolution"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/TabContainer/Resolution"]
+layout_mode = 2
+theme = ExtResource("2_h175o")
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_mr5aa")
+
+[node name="640×480" type="Button" parent="MarginContainer/TabContainer/Resolution"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "640×480"
+
+[node name="800×600" type="Button" parent="MarginContainer/TabContainer/Resolution"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "800×600"
+
+[node name="960×720" type="Button" parent="MarginContainer/TabContainer/Resolution"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "960×720"
+
+[node name="1024×768" type="Button" parent="MarginContainer/TabContainer/Resolution"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "1024×768"
+
+[node name="1280×960" type="Button" parent="MarginContainer/TabContainer/Resolution"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "1280×960"
+
+[node name="1440×1080" type="Button" parent="MarginContainer/TabContainer/Resolution"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "1440×1080"
+
+[node name="1600×1200" type="Button" parent="MarginContainer/TabContainer/Resolution"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "1600×1200"
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/TabContainer/Resolution"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Fullscreen"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/TabContainer/Resolution"]
+layout_mode = 2
+theme = ExtResource("2_h175o")
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_mr5aa")
+
+[node name="Back" type="Button" parent="MarginContainer/TabContainer/Resolution"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Back"
+
+[connection signal="pressed" from="MarginContainer/TabContainer/Audio/Back" to="MarginContainer/TabContainer/Audio" method="_on_back_pressed"]
+[connection signal="toggled" from="MarginContainer/TabContainer/Resolution/CheckBox" to="MarginContainer/TabContainer/Resolution" method="_on_check_box_toggled"]
+[connection signal="pressed" from="MarginContainer/TabContainer/Resolution/Back" to="MarginContainer/TabContainer/Resolution" method="_on_back_pressed"]

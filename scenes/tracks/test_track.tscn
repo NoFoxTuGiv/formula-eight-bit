@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0tk7q2puebtb"]
+
+[ext_resource type="Texture2D" uid="uid://b6n87s66fije8" path="res://assets/Test-Track.png" id="1_ju1uh"]
+[ext_resource type="PackedScene" uid="uid://be32pfrisjoj5" path="res://scenes/player.tscn" id="2_mhhdx"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Track" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ju1uh")
+
+[node name="Player" parent="." instance=ExtResource("2_mhhdx")]
+position = Vector2(1765, 844)
+rotation = 1.5708
+
+[node name="Camera2D" type="Camera2D" parent="Player"]

@@ -1,0 +1,232 @@
+[gd_scene load_steps=5 format=3 uid="uid://bx82vgxxptg47"]
+
+[ext_resource type="Theme" uid="uid://dxvuwylqkr5go" path="res://resources/main_theme.tres" id="1_0lmf7"]
+[ext_resource type="Script" uid="uid://oj5vwsp68sac" path="res://scripts/ui/pause_menu.gd" id="1_6tw0m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0lmf7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4inpj"]
+
+[node name="Pause Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0lmf7")
+script = ExtResource("1_6tw0m")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 500
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.15
+anchor_right = 0.75
+anchor_bottom = 0.85
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0lmf7")
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Pause" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/Pause"]
+layout_mode = 2
+theme_override_constants/separation = 25
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0lmf7")
+
+[node name="Label" type="Label" parent="MarginContainer/Pause"]
+layout_mode = 2
+text = "PAUSE"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/Pause"]
+layout_mode = 2
+theme_override_constants/separation = 25
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0lmf7")
+
+[node name="Resume" type="Button" parent="MarginContainer/Pause"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Settings" type="Button" parent="MarginContainer/Pause"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Restart" type="Button" parent="MarginContainer/Pause"]
+layout_mode = 2
+text = "Restart Race
+"
+
+[node name="Quit" type="Button" parent="MarginContainer/Pause"]
+layout_mode = 2
+text = "Quit"
+
+[node name="PauseSettings" type="VBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/PauseSettings"]
+layout_mode = 2
+theme = ExtResource("1_0lmf7")
+current_tab = 0
+
+[node name="Audio" type="VBoxContainer" parent="MarginContainer/PauseSettings/TabContainer"]
+layout_mode = 2
+theme = ExtResource("1_0lmf7")
+alignment = 1
+metadata/_tab_index = 0
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/PauseSettings/TabContainer/Audio"]
+layout_mode = 2
+theme = ExtResource("1_0lmf7")
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4inpj")
+
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/PauseSettings/TabContainer/Audio"]
+layout_mode = 2
+theme = ExtResource("1_0lmf7")
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4inpj")
+
+[node name="Volume" type="Label" parent="MarginContainer/PauseSettings/TabContainer/Audio"]
+layout_mode = 2
+text = "Volume: 100%"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PauseSettings/TabContainer/Audio"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="VolSlider" type="HSlider" parent="MarginContainer/PauseSettings/TabContainer/Audio/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+tick_count = 10
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/PauseSettings/TabContainer/Audio"]
+layout_mode = 2
+theme = ExtResource("1_0lmf7")
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4inpj")
+
+[node name="Mute" type="CheckBox" parent="MarginContainer/PauseSettings/TabContainer/Audio"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Mute"
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/PauseSettings/TabContainer/Audio"]
+layout_mode = 2
+theme = ExtResource("1_0lmf7")
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4inpj")
+
+[node name="HSeparator5" type="HSeparator" parent="MarginContainer/PauseSettings/TabContainer/Audio"]
+layout_mode = 2
+theme = ExtResource("1_0lmf7")
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4inpj")
+
+[node name="Back" type="Button" parent="MarginContainer/PauseSettings/TabContainer/Audio"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Back"
+
+[node name="Resolution" type="VBoxContainer" parent="MarginContainer/PauseSettings/TabContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_0lmf7")
+alignment = 1
+metadata/_tab_index = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/PauseSettings/TabContainer/Resolution"]
+layout_mode = 2
+theme = ExtResource("1_0lmf7")
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4inpj")
+
+[node name="640×480" type="Button" parent="MarginContainer/PauseSettings/TabContainer/Resolution"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "640×480"
+
+[node name="800×600" type="Button" parent="MarginContainer/PauseSettings/TabContainer/Resolution"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "800×600"
+
+[node name="960×720" type="Button" parent="MarginContainer/PauseSettings/TabContainer/Resolution"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "960×720"
+
+[node name="1024×768" type="Button" parent="MarginContainer/PauseSettings/TabContainer/Resolution"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "1024×768"
+
+[node name="1280×960" type="Button" parent="MarginContainer/PauseSettings/TabContainer/Resolution"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "1280×960"
+
+[node name="1440×1080" type="Button" parent="MarginContainer/PauseSettings/TabContainer/Resolution"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "1440×1080"
+
+[node name="1600×1200" type="Button" parent="MarginContainer/PauseSettings/TabContainer/Resolution"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "1600×1200"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/PauseSettings/TabContainer/Resolution"]
+layout_mode = 2
+theme = ExtResource("1_0lmf7")
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4inpj")
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/PauseSettings/TabContainer/Resolution"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Fullscreen"
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/PauseSettings/TabContainer/Resolution"]
+layout_mode = 2
+theme = ExtResource("1_0lmf7")
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_4inpj")
+
+[node name="Back" type="Button" parent="MarginContainer/PauseSettings/TabContainer/Resolution"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Back"
+
+[connection signal="pressed" from="MarginContainer/Pause/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/Pause/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/Pause/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="MarginContainer/Pause/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/PauseSettings/TabContainer/Audio/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/PauseSettings/TabContainer/Resolution/Back" to="." method="_on_back_pressed"]
